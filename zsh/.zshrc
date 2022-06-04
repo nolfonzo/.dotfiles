@@ -125,6 +125,7 @@ alias ld="ls -ld */"   # List in long format, only directories
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+cdd() {builtin cd "$*" && ls -la;}
 
 # Recursively remove .DS_Store files
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
@@ -132,3 +133,9 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --exclude .git'
+export FZF_ALT_C_COMMAND='fdfind --type directory --follow --hidden'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+
