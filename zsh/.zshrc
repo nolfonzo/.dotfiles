@@ -135,7 +135,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --exclude .git'
-export FZF_ALT_C_COMMAND='fdfind --type directory --follow --hidden'
+export FZF_DEFAULT_COMMAND='fdfind . --type file --follow --hidden --exclude .git'
+export FZF_ALT_C_COMMAND='fdfind . --type directory --follow --hidden'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
